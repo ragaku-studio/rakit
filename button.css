@@ -1,0 +1,14 @@
+.rk-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rk-btn--primary {
+  background-color: var(--rk-color-primary);
+  color: var(--rk-mening-50);
+}

@@ -1,0 +1,45 @@
+:root {
+  /* Nisesa (primary) */
+  --rk-nisesa-50: #EEF4FB;
+  --rk-nisesa-100: #DCE9F6;
+  --rk-nisesa-200: #B9D3ED;
+  --rk-nisesa-300: #8FB6E0;
+  --rk-nisesa-400: #5F94CF;
+  --rk-nisesa-500: #3A73BA;
+  --rk-nisesa-600: #245C9E;
+  --rk-nisesa-700: #1A4E8A;
+  --rk-nisesa-800: #13487F;
+  --rk-nisesa-900: #0D3157;
+  --rk-nisesa-950: #081F38;
+
+  /* Mening (secondary) */
+  --rk-mening-50: #FFFFFF;
+  --rk-mening-100: #FAFBFE;
+  --rk-mening-200: #F4F6FB;
+  --rk-mening-300: #E9EDF5;
+  --rk-mening-400: #D8DFEC;
+  --rk-mening-500: #C2CCE0;
+  --rk-mening-600: #AAB6CB;
+  --rk-mening-700: #8F9DB3;
+  --rk-mening-800: #6F7D91;
+  --rk-mening-900: #4F5968;
+  --rk-mening-950: #2F353F;
+
+  /* Subawa (accent) */
+  --rk-subawa-50: #FFF8E6;
+  --rk-subawa-100: #FDEFC2;
+  --rk-subawa-200: #FBE08A;
+  --rk-subawa-300: #F8CF4F;
+  --rk-subawa-400: #F5C22E;
+  --rk-subawa-500: #F3B41B;
+  --rk-subawa-600: #D99E16;
+  --rk-subawa-700: #B88512;
+  --rk-subawa-800: #93690E;
+  --rk-subawa-900: #6E4E0A;
+  --rk-subawa-950: #453006;
+
+  /* Alias semantik — ini yang dipake component */
+  --rk-color-primary: var(--rk-nisesa-800);
+  --rk-color-secondary: var(--rk-mening-200);
+  --rk-color-accent: var(--rk-subawa-500);
+}
