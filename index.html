@@ -1,13 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="typography.css" />
+    <link rel="stylesheet" href="button.css" />
+    <link rel="stylesheet" href="input.css" />
+    <link rel="stylesheet" href="form-group.css" />
+    <link rel="stylesheet" href="docs.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Muqqodimah</h1>
+      <p class="rk-lead">Fondasi frontend Ragaku Studio — 
+        token dan komponen dasar yang dipakai bareng di seluruh produk digital.</p>
+      <p>
+        Ragaku UI KIT (RAKIT) adalah fondasi frontend yang dibangun dari pemakaian nyata,
+        bukan ditebak dari awal dimana setiap token dan komponen dasar yang dibuat untuk 
+        membantu pengembang membangun aplikasi yang konsisten, mudah diakses, dan 
+        menarik secara visual untuk Ragaku Studio serta semua produk digitalnya.
+        DS ini dibangun dengan prinsip desain yang kuat, fokus pada pengalaman pengguna,
+        dan fleksibilitas untuk memenuhi kebutuhan pengembangan frontend.   
+      </p>
+    </section>
+    <section>
+      <h2>Warna</h2>
+      <p>
+        Tiga skala warna brand: Nisesa (primary), Mening (secondary), Subawa
+        (accent).
+      </p>
+      <div class="rk-example">
+        <div style="display: flex; gap: var(--rk-space-2)">
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: var(--rk-color-primary);
+              border-radius: var(--rk-radius-sm);
+            "></div>
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: var(--rk-color-secondary);
+              border: 1px solid var(--rk-mening-300);
+              border-radius: var(--rk-radius-sm);
+            "></div>
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: var(--rk-color-accent);
+              border-radius: var(--rk-radius-sm);
+            "></div>
+        </div>
+      </div>
+      <pre class="rk-code">background-color: var(--rk-color-primary);</pre>
+    </section>
 
-<head>
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="button.css">
-</head>
+    <section>
+      <h2>Button</h2>
+      <p>Tombol dasar dengan varian warna primary.</p>
+      <div class="rk-example">
+        <button class="rk-btn rk-btn--primary">Tombol RAKIT</button>
+      </div>
+      <pre class="rk-code">
+&lt;button class="rk-btn rk-btn--primary"&gt;Tombol RAKIT&lt;/button&gt;</pre
+      >
+    </section>
 
-<body style="padding: 40px;">
-  <button class="rk-btn rk-btn--primary">Tombol RAKIT</button>
-</body>
+    <section>
+      <h2>Form group</h2>
+      <p>Kombinasi label, input, dan teks bantuan.</p>
+      <div class="rk-example">
+        <div class="rk-form-group">
+          <label>Nama lengkap</label>
+          <input class="rk-input" type="text" placeholder="Masukkan nama" />
+          <span class="rk-help-text">Sesuai KTP</span>
+        </div>
+      </div>
+      <pre class="rk-code">
+        &lt;div class="rk-form-group"&gt;
+          &lt;label&gt;Nama lengkap&lt;/label&gt;
+          &lt;input class="rk-input" type="text"&gt;
+          &lt;span class="rk-help-text"&gt;Sesuai KTP&lt;/span&gt;
+        &lt;/div&gt;
+      </pre
+    </section>
 
+    <section>
+      <h2>Checkbox</h2>
+      <p>Checkbox bawaan browser, ditinting pake warna brand.</p>
+      <div class="rk-example">
+        <label class="rk-checkbox">
+          <input type="checkbox" />
+          <span>Setuju sama syarat & ketentuan</span>
+        </label>
+      </div>
+      <pre class="rk-code">
+        &lt;label class="rk-checkbox"&gt;
+          &lt;input type="checkbox"&gt;
+          &lt;span&gt;Setuju...&lt;/span&gt;
+        &lt;/label&gt;
+      </pre>
+    </section>
+  </body>
 </html>
