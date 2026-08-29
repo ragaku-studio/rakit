@@ -1,10 +1,10 @@
 .rk-btn {
   display: inline-block;
-  padding: 12px 24px;
-  border-radius: 6px;
+  padding: var(--rk-space-3) var(--rk-space-6);
+  border-radius: var(--rk-radius-md);
   border: none;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--rk-font-base);
+  font-weight: var(--rk-font-semibold);
   cursor: pointer;
 }
 
