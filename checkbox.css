@@ -1,0 +1,18 @@
+.rk-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--rk-space-2);
+  cursor: pointer;
+}
+
+.rk-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--rk-color-primary);
+  cursor: pointer;
+}
+
+.rk-checkbox span {
+  font-size: var(--rk-font-sm);
+  color: var(--rk-mening-950);
+}
