@@ -1,0 +1,10 @@
+.rk-alert {
+  display: flex;
+  gap: var(--rk-space-3);
+  padding: var(--rk-space-4);
+  border-radius: var(--rk-radius-md);
+  background-color: var(--rk-color-secondary);
+  border: 1px solid var(--rk-mening-300);
+  color: var(--rk-mening-950);
+  font-size: var(--rk-font-sm);
+}

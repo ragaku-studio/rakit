@@ -1,0 +1,19 @@
+.rk-choice {
+  display: flex;
+  align-items: center;
+  gap: var(--rk-space-2);
+  cursor: pointer;
+}
+
+.rk-choice input[type="checkbox"],
+.rk-choice input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--rk-color-primary);
+  cursor: pointer;
+}
+
+.rk-choice span {
+  font-size: var(--rk-font-sm);
+  color: var(--rk-mening-950);
+}

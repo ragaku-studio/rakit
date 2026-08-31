@@ -1,0 +1,21 @@
+.rk-toast {
+  position: fixed;
+  bottom: var(--rk-space-6);
+  right: var(--rk-space-6);
+  padding: var(--rk-space-3) var(--rk-space-4);
+  border-radius: var(--rk-radius-sm);
+  background-color: var(--rk-mening-950);
+  color: var(--rk-mening-50);
+  font-size: var(--rk-font-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.rk-toast.rk-toast--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

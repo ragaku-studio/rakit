@@ -1,0 +1,48 @@
+.rk-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rk-space-2);
+  cursor: pointer;
+}
+
+.rk-switch input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rk-switch .rk-switch-track {
+  position: relative;
+  width: 40px;
+  height: 24px;
+  background-color: var(--rk-mening-400);
+  border-radius: var(--rk-radius-full);
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.rk-switch .rk-switch-track::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  background-color: var(--rk-mening-50);
+  border-radius: var(--rk-radius-full);
+  transition: transform 0.2s;
+}
+
+.rk-switch input:checked+.rk-switch-track {
+  background-color: var(--rk-color-primary);
+}
+
+.rk-switch input:checked+.rk-switch-track::before {
+  transform: translateX(16px);
+}
+
+.rk-switch .rk-switch-label {
+  font-size: var(--rk-font-sm);
+  color: var(--rk-mening-950);
+}
