@@ -1,111 +1,212 @@
 <!doctype html>
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="tokens.css" />
-    <link rel="stylesheet" href="typography.css" />
-    <link rel="stylesheet" href="button.css" />
-    <link rel="stylesheet" href="input.css" />
-    <link rel="stylesheet" href="form-group.css" />
-    <link rel="stylesheet" href="docs.css" />
-  </head>
-  <body>
-    <section>
-      <h1>Muqqodimah</h1>
-      <p class="rk-lead">Fondasi frontend Ragaku Studio — 
-        token dan komponen dasar yang dipakai bareng di seluruh produk digital.</p>
-      <p>
-        Ragaku UI KIT (RAKIT) adalah fondasi frontend yang dibangun dari pemakaian nyata,
-        bukan ditebak dari awal dimana setiap token dan komponen dasar yang dibuat untuk 
-        membantu pengembang membangun aplikasi yang konsisten, mudah diakses, dan 
-        menarik secara visual untuk Ragaku Studio serta semua produk digitalnya.
-        DS ini dibangun dengan prinsip desain yang kuat, fokus pada pengalaman pengguna,
-        dan fleksibilitas untuk memenuhi kebutuhan pengembangan frontend.   
-      </p>
-    </section>
-    <section>
-      <h2>Warna</h2>
-      <p>
-        Tiga skala warna brand: Nisesa (primary), Mening (secondary), Subawa
-        (accent).
-      </p>
-      <div class="rk-example">
-        <div style="display: flex; gap: var(--rk-space-2)">
-          <div
-            style="
-              width: 48px;
-              height: 48px;
-              background: var(--rk-color-primary);
-              border-radius: var(--rk-radius-sm);
-            "></div>
-          <div
-            style="
-              width: 48px;
-              height: 48px;
-              background: var(--rk-color-secondary);
-              border: 1px solid var(--rk-mening-300);
-              border-radius: var(--rk-radius-sm);
-            "></div>
-          <div
-            style="
-              width: 48px;
-              height: 48px;
-              background: var(--rk-color-accent);
-              border-radius: var(--rk-radius-sm);
-            "></div>
-        </div>
-      </div>
-      <pre class="rk-code">background-color: var(--rk-color-primary);</pre>
-    </section>
 
-    <section>
-      <h2>Button</h2>
-      <p>Tombol dasar dengan varian warna primary.</p>
-      <div class="rk-example">
-        <button class="rk-btn rk-btn--primary">Tombol RAKIT</button>
-      </div>
-      <pre class="rk-code">
-&lt;button class="rk-btn rk-btn--primary"&gt;Tombol RAKIT&lt;/button&gt;</pre
-      >
-    </section>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="typography.css" />
+  <link rel="stylesheet" href="button.css" />
+  <link rel="stylesheet" href="input.css" />
+  <link rel="stylesheet" href="form-group.css" />
+  <link rel="stylesheet" href="docs.css" />
+  <link rel="stylesheet" href="choice.css" />
+  <link rel="stylesheet" href="select.css" />
+  <link rel="stylesheet" href="switch.css" />
+  <link rel="stylesheet" href="badge.css" />
+  <link rel="stylesheet" href="tooltip.css" />
+  <link rel="stylesheet" href="alert.css" />
+  <link rel="stylesheet" href="toast.css" />
+  <script src="rk.js"></script>
+</head>
 
-    <section>
-      <h2>Form group</h2>
-      <p>Kombinasi label, input, dan teks bantuan.</p>
-      <div class="rk-example">
-        <div class="rk-form-group">
-          <label>Nama lengkap</label>
-          <input class="rk-input" type="text" placeholder="Masukkan nama" />
-          <span class="rk-help-text">Sesuai KTP</span>
-        </div>
-      </div>
-      <pre class="rk-code">
-        &lt;div class="rk-form-group"&gt;
-          &lt;label&gt;Nama lengkap&lt;/label&gt;
-          &lt;input class="rk-input" type="text"&gt;
-          &lt;span class="rk-help-text"&gt;Sesuai KTP&lt;/span&gt;
-        &lt;/div&gt;
-      </pre
-    </section>
+<body>
+  <section>
+    <h1>Muqqodimah</h1>
+    <p class="rk-lead">Fondasi frontend Ragaku Studio —
+      token dan komponen dasar yang dipakai bareng di seluruh produk digital.</p>
+    <p>
+      RAKIT (Ragaku Kit) dibangun dari pemakaian nyata, bukan ditebak dari awal.
+      Tiap token dan komponen lahir pas beneran dibutuhin di kode, bukan disiapkan
+      duluan buat kemungkinan yang belum tentu kepake.
+    </p>
+    <h2>Prinsip</h2>
+    <ul>
+      <li><strong>Token dulu.</strong> Warna, spacing, radius — semua lewat variable, gak ada angka hardcode di
+        component.</li>
+      <li><strong>Lahir dari pemakaian.</strong> Token &amp; pattern baru diangkat begitu kepake berulang di kode nyata.
+      </li>
+      <li><strong>Plain HTML &amp; CSS.</strong> Gak keiket satu framework — jalan di CI3 sekarang, Laravel dan lainnya
+        nanti.</li>
+      <li><strong>Kecil &amp; bertahap.</strong> Berkembang selangkah demi selangkah, bukan lengkap sejak hari pertama.
+      </li>
+    </ul>
+    <h2>Sumber</h2>
+    <p>Kode ada di <a href="https://github.com/ragaku-studio/rakit">github.com/ragaku-studio/rakit</a>. Alasan di balik
+      tiap keputusan ada di <code>PRINCIPLES.md</code>.</p>
+  </section>
 
-    <section>
-      <h2>Checkbox</h2>
-      <p>Checkbox bawaan browser, ditinting pake warna brand.</p>
-      <div class="rk-example">
-        <label class="rk-checkbox">
-          <input type="checkbox" />
-          <span>Setuju sama syarat & ketentuan</span>
-        </label>
+  <section>
+    <h2>Warna</h2>
+    <p>Tiga skala warna brand: Nisesa (primary), Mening (secondary), Subawa (accent).</p>
+    <div class="rk-example">
+      <div class="rk-swatch-group">
+        <div class="rk-swatch rk-swatch--primary"></div>
+        <div class="rk-swatch rk-swatch--secondary"></div>
+        <div class="rk-swatch rk-swatch--accent"></div>
       </div>
-      <pre class="rk-code">
-        &lt;label class="rk-checkbox"&gt;
-          &lt;input type="checkbox"&gt;
-          &lt;span&gt;Setuju...&lt;/span&gt;
-        &lt;/label&gt;
-      </pre>
-    </section>
-  </body>
+    </div>
+    <pre class="rk-code">background-color: var(--rk-color-primary);</pre>
+  </section>
+
+  <section>
+    <h2>Button</h2>
+    <p>Tombol dasar dengan varian warna primary.</p>
+    <div class="rk-example">
+      <button type="button" class="rk-btn rk-btn--primary">Tombol RAKIT</button>
+    </div>
+    <pre class="rk-code">&lt;button class="rk-btn rk-btn--primary"&gt;Tombol RAKIT&lt;/button&gt;</pre>
+  </section>
+
+  <section>
+    <h2>Form group</h2>
+    <p>Kombinasi label, input, dan teks bantuan.</p>
+    <div class="rk-example">
+      <div class="rk-form-group">
+        <label>Nama lengkap</label>
+        <input class="rk-input" type="text" placeholder="Masukkan nama" />
+        <span class="rk-help-text">Sesuai KTP</span>
+      </div>
+    </div>
+    <pre class="rk-code">&lt;div class="rk-form-group"&gt;
+        &lt;label&gt;Nama lengkap&lt;/label&gt;
+        &lt;input class="rk-input" type="text"&gt;
+        &lt;span class="rk-help-text"&gt;Sesuai KTP&lt;/span&gt;
+      &lt;/div&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Checkbox</h2>
+    <p>Checkbox bawaan browser, ditinting pake warna brand.</p>
+    <div class="rk-example">
+      <label class="rk-choice">
+        <input type="checkbox" />
+        <span>Setuju sama syarat &amp; ketentuan</span>
+      </label>
+    </div>
+    <pre class="rk-code">&lt;label class="rk-choice"&gt;
+        &lt;input type="checkbox"&gt;
+        &lt;span&gt;Setuju...&lt;/span&gt;
+      &lt;/label&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Radio</h2>
+    <p>Radio button bawaan browser, ditinting pake warna brand. Dipake berkelompok lewat atribut <code>name</code> yang
+      sama.</p>
+    <div class="rk-example">
+      <label class="rk-choice">
+        <input type="radio" name="rk-demo-radio" value="a" checked />
+        <span>Opsi A</span>
+      </label>
+      <label class="rk-choice">
+        <input type="radio" name="rk-demo-radio" value="b" />
+        <span>Opsi B</span>
+      </label>
+      <label class="rk-choice">
+        <input type="radio" name="rk-demo-radio" value="c" />
+        <span>Opsi C</span>
+      </label>
+    </div>
+    <pre class="rk-code">&lt;label class="rk-choice"&gt;
+        &lt;input type="radio" name="grup"&gt;
+        &lt;span&gt;Opsi A&lt;/span&gt;
+      &lt;/label&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Select</h2>
+    <p>Dropdown pilihan — kotak luarnya ke-style, isi dropdown-nya masih tampilan asli browser.</p>
+    <div class="rk-example">
+      <select class="rk-select">
+        <option value="">Pilih kota</option>
+        <option value="jakarta">Jakarta</option>
+        <option value="bogor">Bogor</option>
+        <option value="yogyakarta">Yogyakarta</option>
+      </select>
+    </div>
+    <pre class="rk-code">&lt;select class="rk-select"&gt;
+      &lt;option value="jakarta"&gt;Jakarta&lt;/option&gt;
+    &lt;/select&gt;</pre>
+  </section>
+
+  <section>
+    <h2>Switch</h2>
+    <p>Checkbox yang disamarin jadi toggle — dibangun manual pake CSS, belum ada native yang cukup didukung browser.</p>
+    <div class="rk-example">
+      <label class="rk-switch">
+        <input type="checkbox" />
+        <span class="rk-switch-track"></span>
+        <span class="rk-switch-label">Aktifkan notifikasi</span>
+      </label>
+    </div>
+    <pre class="rk-code">&lt;label class="rk-switch"&gt;
+      &lt;input type="checkbox"&gt;
+      &lt;span class="rk-switch-track"&gt;&lt;/span&gt;
+      &lt;span class="rk-switch-label"&gt;Aktifkan notifikasi&lt;/span&gt;
+    &lt;/label&gt;</pre>
+  </section>
+
+  <section>
+    <h2>Badge</h2>
+    <p>Label kecil buat status atau kategori. Baru 1 varian netral — varian warna status ("Aktif"/"Error"/dst) belum
+      ada, nunggu warna brand status diputusin dulu.</p>
+    <div class="rk-example">
+      <span class="rk-badge">Draft</span>
+    </div>
+    <pre class="rk-code">&lt;span class="rk-badge"&gt;Draft&lt;/span&gt;</pre>
+  </section>
+
+  <section>
+    <h2>Tooltip</h2>
+    <p>Info tambahan yang muncul pas hover atau fokus keyboard. Belum ideal di layar sentuh — device touch gak punya
+      state hover.</p>
+    <div class="rk-example">
+      <span class="rk-tooltip-wrap" tabindex="0">
+        Info tambahan
+        <span class="rk-tooltip">Ini contoh isi tooltip-nya</span>
+      </span>
+    </div>
+    <pre class="rk-code">&lt;span class="rk-tooltip-wrap" tabindex="0"&gt;
+  Info tambahan
+    &lt;span class="rk-tooltip"&gt;Isi tooltip&lt;/span&gt;
+  &lt;/span&gt;</pre>
+  </section>
+
+  <section>
+    <h2>Alert</h2>
+    <p>Pesan inline yang nempel di halaman — beda dari Toast, ini gak ilang sendiri.</p>
+    <div class="rk-example">
+      <div class="rk-alert">Fitur ini masih dalam tahap pengembangan.</div>
+    </div>
+    <pre class="rk-code">&lt;div class="rk-alert"&gt;Pesan di sini&lt;/div&gt;</pre>
+  </section>
+
+  <section>
+    <h2>Toast</h2>
+    <p>Notifikasi sementara — muncul pas dipicu, ilang sendiri setelah 3 detik.</p>
+    <div class="rk-example">
+      <button type="button" class="rk-btn rk-btn--primary" onclick="rkShowToast('rk-toast-demo')">Tampilkan
+        toast</button>
+      <div class="rk-toast" id="rk-toast-demo">Perubahan berhasil disimpan</div>
+    </div>
+    <pre class="rk-code">&lt;button onclick="rkShowToast('id-nya')"&gt;Tampilkan&lt;/button&gt;
+&lt;div class="rk-toast" id="id-nya"&gt;Pesan&lt;/div&gt;</pre>
+  </section>
+</body>
+
 </html>
