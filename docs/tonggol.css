@@ -1,13 +1,29 @@
 /*------------------- Page base -------------------*/
+
+/* Reset margin dan padding default browser agar layout menempel penuh */
+html,
 body {
-  color: var(--rk-mening-950);
-  padding: var(--rk-space-8);
-  max-width: 960px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  color: var(--rk-mening-950);
+  background-color: var(--rk-mening-50);
+  min-height: 100vh;
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rk-mening-300);
+  color: var(--rk-mening-700);
+}
+
+
 section {
-  margin-bottom: var(--rk-space-12);
+  margin: var(--rk-space-6);
   scroll-margin-top: calc(64px + var(--rk-space-4));
 }
 
@@ -16,36 +32,161 @@ section {
   color: var(--rk-mening-700);
 }
 
+/*------------------- Docs Hero Image -------------------*/
+.rk-docs-hero {
+  width: 100%;
+  margin-top: var(--rk-space-4);
+  margin-bottom: var(--rk-space-8);
+  border-radius: var(--rk-radius-md, 12px);
+  border: 1px solid var(--rk-mening-300);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.rk-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 /*------------------- Sidebar layout -------------------*/
 .rk-docs-layout {
   display: flex;
-  gap: var(--rk-space-8);
-  align-items: flex-start;
+  min-height: 100vh;
 }
 
 .rk-docs-sidebar {
-  position: sticky;
-  top: calc(64px + var(--rk-space-6));
-  width: 160px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
   flex-shrink: 0;
+  background-color: var(--rk-mening-100);
+  border-right: 1px solid var(--rk-mening-300);
+  padding: var(--rk-space-6) var(--rk-space-4);
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--rk-space-1);
+  z-index: 10;
 }
 
 .rk-docs-sidebar a {
   display: block;
-  padding: var(--rk-space-1) 0;
+  padding: var(--rk-space-2) var(--rk-space-3);
   font-size: var(--rk-font-sm);
   color: var(--rk-mening-700);
   text-decoration: none;
+  border-radius: var(--rk-radius-sm);
+  transition: all 0.2s ease;
 }
 
 .rk-docs-sidebar a:hover {
+  background-color: var(--rk-nisesa-50);
+  /* Efek hover modern khas RAKIT */
   color: var(--rk-color-primary);
 }
 
 .rk-docs-content {
   flex: 1;
   min-width: 0;
+  margin-left: 240px;
+  padding: var(--rk-space-4) var(--rk-space-12);
+  max-width: 1000px;
 }
+
+/*------------------- Sidebar Brand Header -------------------*/
+.rk-sidebar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rk-mening-300);
+  padding-bottom: var(--rk-space-3);
+  margin-bottom: var(--rk-space-4);
+  /* Kasih jarak pembatas ke menu di bawahnya */
+}
+
+.rk-brand-link {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--rk-space-3, 12px);
+  text-decoration: none;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.rk-brand-logo-wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: var(--rk-nisesa-800);
+  border-radius: var(--rk-radius-md, 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rk-brand-logo {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+.rk-brand-title {
+  font-family: var(--rk-font-family-heading, inherit);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  margin: 0;
+  color: var(--rk-mening-950);
+}
+
+.rk-brand-badge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rk-nisesa-600);
+  background-color: var(--rk-nisesa-50);
+  padding: 2px 6px;
+  border-radius: var(--rk-radius-sm, 4px);
+}
+
+/*------------------- Responsive Mobile -------------------*/
+@media (max-width: 768px) {
+  .rk-docs-layout {
+    flex-direction: column;
+  }
+
+  .rk-docs-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--rk-mening-300);
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: var(--rk-space-3);
+  }
+
+  .rk-sidebar-brand {
+    display: none;
+  }
+
+  .rk-docs-content,
+  footer {
+    margin: 0;
+    padding: 0
+  }
+}
+
 
 /*------------------- Example & code box -------------------*/
 .rk-example {
@@ -56,9 +197,10 @@ section {
 }
 
 .rk-code {
-  background-color: var(--rk-mening-100);
+  background-color: var(--rk-mening-200);
   color: var(--rk-mening-950);
   padding: var(--rk-space-4);
+  border: 1px solid var(--rk-mening-300);
   border-radius: var(--rk-radius-sm);
   font-size: var(--rk-font-sm);
   overflow-x: auto;
@@ -92,8 +234,9 @@ section {
 
 /*------------------- Color scale -------------------*/
 .rk-scale {
-  display: flex;
-  gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
   margin-bottom: var(--rk-space-6);
 }
 
@@ -104,8 +247,8 @@ section {
 
 .rk-scale-swatch {
   height: 56px;
-  border-radius: var(--rk-radius-xs);
-  border: 1px solid var(--rk-mening-200);
+  border-radius: 0;
+  border: 0;
 }
 
 .rk-scale-label {
@@ -113,6 +256,43 @@ section {
   margin-top: var(--rk-space-1);
   font-size: 11px;
   color: var(--rk-mening-700);
+}
+
+.rk-scale .rk-card {
+  margin-bottom: 0;
+  border-radius: 8px;
+  background-color: var(--rk-mening-50);
+  border: 1px solid var(--rk-mening-300);
+  display: flex;
+  flex-direction: column;
+}
+
+.rk-scale .rk-card-image {
+  height: 56px;
+}
+
+.rk-scale .rk-scale-swatch {
+  width: 100%;
+  height: 100%;
+}
+
+.rk-scale .rk-card-content {
+  padding: var(--rk-space-2) !important;
+  text-align: left;
+}
+
+.rk-scale .rk-card-content h6 {
+  margin: 0 0 2px 0;
+  font-size: var(--rk-font-sm);
+  font-weight: var(--rk-font-semibold);
+  letter-spacing: var(--rk-line-height-body);
+}
+
+.rk-scale .rk-badge-label {
+  display: block;
+  font-size: var(--rk-font-xs);
+  font-weight: var(--rk-font-regular);
+  color: var(--rk-mening-950);
 }
 
 /*------------------- Navbar -------------------*/
@@ -128,6 +308,7 @@ section {
   z-index: 20;
   background-color: var(--rk-mening-50);
 }
+
 .rk-navbar-logo {
   font-family: var(--rk-font-family-heading);
   font-weight: var(--rk-font-semibold);
@@ -135,11 +316,57 @@ section {
   color: var(--rk-mening-950);
   text-decoration: none;
 }
+
+.rk-navbar-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--rk-color-primary);
+  border-radius: var(--rk-radius-sm);
+}
+
+.rk-navbar-logo-box img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
 .rk-navbar-action a {
   font-size: var(--rk-font-sm);
   color: var(--rk-mening-700);
   text-decoration: none;
 }
+
 .rk-navbar-action a:hover {
   color: var(--rk-color-primary);
+}
+
+/*------------------- Card -------------------*/
+.rk-card {
+  border: 1px solid var(--rk-mening-300);
+  border-radius: var(--rk-radius-md);
+  background-color: var(--rk-mening-50);
+  margin-bottom: var(--rk-space-3);
+  overflow: hidden;
+}
+
+.rk-card-image {
+  padding: 0;
+}
+
+.rk-card-header {
+  padding: var(--rk-space-4);
+  border-bottom: 1px solid var(--rk-mening-300);
+  font-weight: var(--rk-font-semibold);
+}
+
+.rk-card-content {
+  padding: var(--rk-space-4);
+}
+
+.rk-card-footer {
+  padding: var(--rk-space-4);
+  border-top: 1px solid var(--rk-mening-300);
 }

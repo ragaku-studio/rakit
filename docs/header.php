@@ -10,7 +10,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="rakit.css" />
   <link rel="stylesheet" href="tonggol.css" />
-  <script src="rk.js"></script>
+  <script src="rk.js" defer></script>
 </head>
 
 <body>
